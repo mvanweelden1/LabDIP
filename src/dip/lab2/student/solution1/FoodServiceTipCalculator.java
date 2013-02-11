@@ -6,7 +6,7 @@ package dip.lab2.student.solution1;
  *
  * Any other best practice violations? Fix them too.
  *
- * @author your name goes here
+ * @author Mark Van Weelden
  */
 public class FoodServiceTipCalculator implements TipStrategy{
     private static final double MIN_BILL = 0.00;
@@ -28,7 +28,7 @@ public class FoodServiceTipCalculator implements TipStrategy{
     }
 
     @Override
-    public double getTip() {
+    public final double getTip() {
         double tip = 0.00; // always initialize local variables
 
         switch(serviceQuality) {
@@ -58,7 +58,7 @@ public class FoodServiceTipCalculator implements TipStrategy{
         serviceQuality = q;
     }
 
-    public ServiceQuality getServiceQuality() {
+    public final ServiceQuality getServiceQuality() {
         return serviceQuality;
     }
 

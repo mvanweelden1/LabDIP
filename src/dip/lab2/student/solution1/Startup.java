@@ -30,11 +30,21 @@ public class Startup {
 //                BaggageServiceTipCalculator.ServiceQuality.FAIR,5);
 //        
 //        System.out.println(service.getTip());
-        TipStrategy tipStrategy = new BaggageServiceTipCalculator(BaggageServiceTipCalculator.ServiceQuality.FAIR, 5);
         
-        TipService baggageTip = new TipService();
+        FoodServiceTipCalculator tip1 = new FoodServiceTipCalculator(FoodServiceTipCalculator.ServiceQuality.GOOD, 100.00);
+        BaggageServiceTipCalculator tip2 = new BaggageServiceTipCalculator(BaggageServiceTipCalculator.ServiceQuality.FAIR, 5);
         
-        System.out.println(baggageTip.getTipAmount(tipStrategy));
+        TipStrategy[] tips = {tip1, tip2};
+        
+        TipService tipService = new TipService();
+        
+          for(int i=0; i < tips.length; i++) {
+            System.out.println("Tip " + (i+1) + " = " +
+            tipService.getTipAmount(tips[i]));
+        }
+        
+        
+        
         
         
         
