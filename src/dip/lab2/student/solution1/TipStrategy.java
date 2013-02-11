@@ -11,6 +11,6 @@ package dip.lab2.student.solution1;
  */
 public interface TipStrategy {
 
-    double getTip();
+    public abstract double getTip();
 
 }

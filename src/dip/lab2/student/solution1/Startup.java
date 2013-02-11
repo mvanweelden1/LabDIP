@@ -30,6 +30,9 @@ public class Startup {
 //                BaggageServiceTipCalculator.ServiceQuality.FAIR,5);
 //        
 //        System.out.println(service.getTip());
+        TipStrategy tipStrategy = new BaggageServiceTipCalculator(BaggageServiceTipCalculator.ServiceQuality.FAIR, 5);
+        
+        TipService baggageTip = new BaggageServiceTipCalculator(tipStrategy);
         
         
         
