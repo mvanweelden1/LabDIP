@@ -19,10 +19,7 @@ import javax.swing.JOptionPane;
  * @author Mark Van Weelden
  */
 public class Startup {
-    public static enum ServiceQuality {
-           GOOD, FAIR, POOR
-    };
- 
+    
     public static void main(String[] args) {
         
 //        BaggageServiceTipCalculator service =
@@ -31,16 +28,19 @@ public class Startup {
 //        
 //        System.out.println(service.getTip());
         
-        FoodServiceTipCalculator tip1 = new FoodServiceTipCalculator(FoodServiceTipCalculator.ServiceQuality.GOOD, 100.00);
+        FoodServiceTipCalculator tip1 = new FoodServiceTipCalculator(FoodServiceTipCalculator.ServiceQuality.GOOD, 102.00);
         BaggageServiceTipCalculator tip2 = new BaggageServiceTipCalculator(BaggageServiceTipCalculator.ServiceQuality.FAIR, 5);
+        BaggageServiceTipCalculator tip3 = new BaggageServiceTipCalculator(BaggageServiceTipCalculator.ServiceQuality.POOR, 1);
         
-        TipStrategy[] tips = {tip1, tip2};
+        TipStrategy[] tips = {tip1, tip2, tip3};
         
         TipService tipService = new TipService();
         
+        NumberFormat nf = NumberFormat.getCurrencyInstance();
+        
           for(int i=0; i < tips.length; i++) {
             System.out.println("Tip " + (i+1) + " = " +
-            tipService.getTipAmount(tips[i]));
+            nf.format(tipService.getTipAmount(tips[i])));
         }
         
         
