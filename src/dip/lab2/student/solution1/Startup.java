@@ -22,11 +22,6 @@ public class Startup {
     
     public static void main(String[] args) {
         
-//        BaggageServiceTipCalculator service =
-//                new BaggageServiceTipCalculator(
-//                BaggageServiceTipCalculator.ServiceQuality.FAIR,5);
-//        
-//        System.out.println(service.getTip());
         
         FoodServiceTipCalculator tip1 = new FoodServiceTipCalculator(FoodServiceTipCalculator.ServiceQuality.GOOD, 102.00);
         BaggageServiceTipCalculator tip2 = new BaggageServiceTipCalculator(BaggageServiceTipCalculator.ServiceQuality.FAIR, 5);
